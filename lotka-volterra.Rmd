@@ -1,5 +1,6 @@
 ---
 title: "Lotka-Volterra Example"
+subtitle: "Numerical approximations"
 output: html_document
 ---
 
