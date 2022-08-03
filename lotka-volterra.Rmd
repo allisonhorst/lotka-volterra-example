@@ -10,37 +10,33 @@ library(deSolve)
 library(kableExtra)
 ```
 
-**Credit:** This code is closely based on the article (Numerically solving differential equations with R)[https://rstudio-pubs-static.s3.amazonaws.com/32888_197d1a1896534397b67fb04e0d4899ae.html]
+**Credit:** This code is closely based on the article [Numerically solving differential equations with R](https://rstudio-pubs-static.s3.amazonaws.com/32888_197d1a1896534397b67fb04e0d4899ae.html)
 
 ### The Lotka-Volterra equations
 
-As described in the lecture, the Lotke-Volterra models have been used to describe predator-prey populations. 
+As described in the lecture, the Lotke-Volterra models have been used to describe predator-prey populations.
 
-#### Prey equation: 
+#### Prey equation:
 
 $$\frac{dx}{dt}=\alpha x-\beta xy$$
 
 From Wikipedia: "The prey are assumed to have an unlimited food supply and to reproduce exponentially, unless subject to predation; this exponential growth is represented in the equation above by the term $\alpha x$. The rate of predation upon the prey is assumed to be proportional to the rate at which the predators and the prey meet, this is represented above by $\beta xy$. If either x or y is zero, then there can be no predation."
 
-#### Predator equation: 
+#### Predator equation:
 
 $$\frac{dy}{dt}=\delta xy - \gamma y$$
 
-From Wikipedia: "In this equation, $\delta xy$ represents the growth of the predator population. (Note the similarity to the predation rate; however, a different constant is used, as the rate at which the predator population grows is not necessarily equal to the rate at which it consumes the prey). The term $\gamma y$ represents the loss rate of the predators due to either natural death or emigration, it leads to an exponential decay in the absence of prey. 
+From Wikipedia: "In this equation, $\delta xy$ represents the growth of the predator population. (Note the similarity to the predation rate; however, a different constant is used, as the rate at which the predator population grows is not necessarily equal to the rate at which it consumes the prey). The term $\gamma y$ represents the loss rate of the predators due to either natural death or emigration, it leads to an exponential decay in the absence of prey.
 
-Where: 
+Where:
 
-- $x$ is prey population (e.g. rabbits)
-- $y$ is predator population (e.g. wolves)
-- $\alpha, \beta, \gamma, \delta$ are positive parameters
+-   $x$ is prey population (e.g. rabbits)
+-   $y$ is predator population (e.g. wolves)
+-   $\alpha, \beta, \gamma, \delta$ are positive parameters
 
-To find an approximate solution in R, we will need four things: 
-- Parameter values
-- A sequence of times over which we'll approximate predator & prey populations
-- An initial condition (initial populations of predator & prey at t = 0)
-- The differential equations that need to be solved
+To find an approximate solution in R, we will need four things: - Parameter values - A sequence of times over which we'll approximate predator & prey populations - An initial condition (initial populations of predator & prey at t = 0) - The differential equations that need to be solved
 
-Solving the Lotke-Volterra equation: 
+Solving the Lotke-Volterra equation:
 
 ```{r}
 # Create a sequence of times (days): 
@@ -79,9 +75,9 @@ ggplot(data = approx_lk_df, aes(x = time, y = population)) +
 
 ## Updating parameter values
 
-What happens as you change the different parameters (and re-run the entire code chunk)? How does that align with what you see in the graph? Some things to keep in mind: 
+What happens as you change the different parameters (and re-run the entire code chunk)? How does that align with what you see in the graph? Some things to keep in mind:
 
-- $\alpha$ is a growth rate for prey
-- $\gamma$ is a mortality rate for predator
+-   $\alpha$ is a growth rate for prey
+-   $\gamma$ is a mortality rate for predator
 
 ## End
