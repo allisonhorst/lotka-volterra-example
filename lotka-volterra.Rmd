@@ -50,7 +50,7 @@ parameters <- c(alpha = .75, beta = 0.8, delta = 0.5, gamma = 1)
 
 # Set the initial condition (prey and predator populations at t = 0).
 # Recall: x = prey, y = predator
-init_cond <- c(x = 5, y = 4)
+init_cond <- c(x = 10, y = 4)
 
 # Prepare the series of differential equations as a function: 
 lk_equations <- function(time, init_cond, parameters) {
@@ -82,5 +82,7 @@ What happens as you change the different parameters (and re-run the entire code 
 
 -   $\alpha$ is a growth rate for prey
 -   $\gamma$ is a mortality rate for predator
+
+### I CHANGED SOMETHING
 
 ## End
